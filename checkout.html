@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout - ShopEase</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header id="main-header">
+    <nav class="navbar">
+      <a href="index.html" class="logo" id="header-logo">
+        Shop<span>Ease</span>
+      </a>
+
+      <!-- Search Form -->
+      <form class="search-form" id="header-search-form">
+        <input type="text" id="header-search-input" placeholder="Search products..." />
+        <button type="submit" id="btn-header-search-submit" aria-label="Search">🔍</button>
+      </form>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
+
+      <!-- Nav Links -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" id="nav-home">Home</a></li>
+        <li><a href="products.html" id="nav-products">Products</a></li>
+        <li>
+          <a href="cart.html" id="nav-cart">
+            Cart 🛒 <span class="cart-badge" id="cart-count-badge">0</span>
+          </a>
+        </li>
+        <li id="user-nav-area">
+          <a href="login.html" class="btn btn-login-nav" id="nav-login">Login</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Page Header Title -->
+  <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #ffffff; padding: 2rem 1.5rem; text-align: center; border-bottom: 1px solid #334155;">
+    <h1 style="font-size: 1.85rem; font-weight: 800; color: #ffffff; margin-bottom: 0.25rem;" id="checkout-heading">Express Checkout</h1>
+    <p style="color: #94a3b8; font-size: 0.925rem;">Enter your shipping details and select payment method to complete order</p>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-checkout-content">
+
+    <div class="checkout-layout">
+      <!-- Checkout Form Section -->
+      <form id="checkout-form">
+
+        <!-- 1. Customer Information -->
+        <div class="form-section" id="customer-info-section">
+          <h3 class="form-section-title">👤 Customer Information</h3>
+          <div class="form-grid">
+            <div class="form-group full">
+              <label for="full-name">Full Name *</label>
+              <input type="text" id="full-name" placeholder="e.g. Rahul Sharma" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" placeholder="e.g. rahul@example.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" placeholder="e.g. 9876543210" required />
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Delivery Address -->
+        <div class="form-section" id="delivery-address-section">
+          <h3 class="form-section-title">📍 Delivery Address</h3>
+          <div class="form-grid">
+            <div class="form-group full">
+              <label for="address">Street Address / Flat / Building *</label>
+              <input type="text" id="address" placeholder="e.g. Flat 402, Green Acres, MG Road" required />
+            </div>
+
+            <div class="form-group">
+              <label for="city">City *</label>
+              <input type="text" id="city" placeholder="e.g. Mumbai" required />
+            </div>
+
+            <div class="form-group">
+              <label for="state">State *</label>
+              <input type="text" id="state" placeholder="e.g. Maharashtra" required />
+            </div>
+
+            <div class="form-group full">
+              <label for="pincode">PIN Code *</label>
+              <input type="text" id="pincode" placeholder="e.g. 400001" required />
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Payment Method -->
+        <div class="form-section" id="payment-method-section">
+          <h3 class="form-section-title">💳 Payment Method</h3>
+          
+          <div class="payment-options">
+            <label class="payment-option">
+              <input type="radio" name="payment" value="cod" checked onclick="togglePaymentFields('cod')" />
+              <div>
+                <strong>💵 Cash on Delivery (COD)</strong>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">Pay in cash or UPI when your package arrives at your door</p>
+              </div>
+            </label>
+
+            <label class="payment-option">
+              <input type="radio" name="payment" value="upi" onclick="togglePaymentFields('upi')" />
+              <div>
+                <strong>📱 UPI Payment (GPay / PhonePe / Paytm)</strong>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">Instant zero-fee payment using your Virtual Payment Address</p>
+              </div>
+            </label>
+
+            <!-- UPI details box -->
+            <div id="upi-details" style="display: none; padding: 0.85rem; background: #f8fafc; border-radius: var(--radius-sm); border: 1px solid var(--border-color); margin-left: 1.5rem;">
+              <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 0.3rem;">Enter UPI ID *</label>
+              <input type="text" id="upi-id" placeholder="e.g. username@upi or phone@paytm" style="width: 100%; padding: 0.5rem; border: 1px solid var(--border-color); border-radius: 4px;" />
+            </div>
+
+            <label class="payment-option">
+              <input type="radio" name="payment" value="card" onclick="togglePaymentFields('card')" />
+              <div>
+                <strong>💳 Credit / Debit Card</strong>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">Supports Visa, Mastercard, RuPay, and Maestro cards</p>
+              </div>
+            </label>
+
+            <!-- Card details box -->
+            <div id="card-details" style="display: none; padding: 0.85rem; background: #f8fafc; border-radius: var(--radius-sm); border: 1px solid var(--border-color); margin-left: 1.5rem;">
+              <div class="form-group" style="margin-bottom: 0.75rem;">
+                <label style="font-size: 0.85rem; font-weight: 600;">Card Number *</label>
+                <input type="text" id="card-number" placeholder="4532 •••• •••• 8910" style="padding: 0.5rem; border: 1px solid var(--border-color); border-radius: 4px;" />
+              </div>
+              <div style="display: flex; gap: 0.75rem;">
+                <div class="form-group" style="flex: 1;">
+                  <label style="font-size: 0.85rem; font-weight: 600;">Expiry (MM/YY) *</label>
+                  <input type="text" id="card-expiry" placeholder="12/28" style="padding: 0.5rem; border: 1px solid var(--border-color); border-radius: 4px;" />
+                </div>
+                <div class="form-group" style="flex: 1;">
+                  <label style="font-size: 0.85rem; font-weight: 600;">CVV *</label>
+                  <input type="password" id="card-cvv" placeholder="•••" maxlength="4" style="padding: 0.5rem; border: 1px solid var(--border-color); border-radius: 4px;" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-accent btn-block" style="padding: 1rem; font-size: 1.1rem;" id="btn-place-order">
+          🎉 Place Order Now
+        </button>
+      </form>
+
+      <!-- Order Summary Card -->
+      <div class="cart-summary" id="checkout-order-summary">
+        <!-- Rendered by checkout.js -->
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Order Confirmation Modal -->
+  <div class="modal-overlay" id="order-modal">
+    <div class="modal-content">
+      <div id="order-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="main-footer">
+    <div class="footer-content">
+      <div class="footer-col">
+        <a href="index.html" class="logo" style="font-size: 1.3rem; margin-bottom: 1rem; display: inline-block;">
+          🛍️ Shop<span>Ease</span>
+        </a>
+        <p>Your trusted online shopping store delivering quality products right to your doorstep.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Customer Service</h4>
+        <ul class="footer-links">
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Returns & Refunds</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul class="footer-links" style="font-size: 0.9rem;">
+          <li>📍 101 Commerce Hub, Tech Park, India</li>
+          <li>📧 support@shopease.com</li>
+          <li>📞 +91 1800-123-4567</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 ShopEase. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="cart.js"></script>
+  <script src="checkout.js"></script>
+  <script src="auth.js"></script>
+  <script src="common.js"></script>
+</body>
+</html>

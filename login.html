@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - ShopEase</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header id="main-header">
+    <nav class="navbar">
+      <a href="index.html" class="logo" id="header-logo">
+        Shop<span>Ease</span>
+      </a>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
+
+      <!-- Nav Links -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" id="nav-home">Home</a></li>
+        <li><a href="products.html" id="nav-products">Products</a></li>
+        <li>
+          <a href="cart.html" id="nav-cart">
+            Cart 🛒 <span class="cart-badge" id="cart-count-badge">0</span>
+          </a>
+        </li>
+        <li id="user-nav-area">
+          <a href="login.html" class="btn btn-login-nav active" id="nav-login">Login</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-login-content">
+
+    <div class="auth-container">
+      <div class="auth-header">
+        <h2>Welcome Back</h2>
+        <p>Login to your ShopEase account to manage orders and checkout faster</p>
+      </div>
+
+      <form id="login-form">
+        <div class="form-group" style="margin-bottom: 1.25rem;">
+          <label for="login-email">Email Address *</label>
+          <input type="email" id="login-email" placeholder="e.g. rahul@example.com" required />
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1.25rem;">
+          <label for="login-password">Password *</label>
+          <input type="password" id="login-password" placeholder="Enter your password" required />
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; font-size: 0.875rem;">
+          <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; color: var(--text-muted);">
+            <input type="checkbox" id="remember-me" checked /> Remember Me
+          </label>
+          <a href="#" style="color: var(--primary-color); font-weight: 500;" onclick="alert('Password reset link sent to your email!')">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block" id="btn-login-submit">
+          Login to Account
+        </button>
+      </form>
+
+      <div class="auth-footer">
+        Don't have an account? <a href="register.html" id="link-to-register">Register Now</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="main-footer">
+    <div class="footer-bottom">
+      © 2026 ShopEase. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="cart.js"></script>
+  <script src="auth.js"></script>
+  <script src="common.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "ShopEase",
+  "description": "A complete, modern e-commerce shopping platform with product search, category filtering, cart management, checkout, and authentication using LocalStorage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

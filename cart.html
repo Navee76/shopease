@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping Cart - ShopEase</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header id="main-header">
+    <nav class="navbar">
+      <a href="index.html" class="logo" id="header-logo">
+        Shop<span>Ease</span>
+      </a>
+
+      <!-- Search Form -->
+      <form class="search-form" id="header-search-form">
+        <input type="text" id="header-search-input" placeholder="Search products..." />
+        <button type="submit" id="btn-header-search-submit" aria-label="Search">🔍</button>
+      </form>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
+
+      <!-- Nav Links -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" id="nav-home">Home</a></li>
+        <li><a href="products.html" id="nav-products">Products</a></li>
+        <li>
+          <a href="cart.html" id="nav-cart" class="active">
+            Cart 🛒 <span class="cart-badge" id="cart-count-badge">0</span>
+          </a>
+        </li>
+        <li id="user-nav-area">
+          <a href="login.html" class="btn btn-login-nav" id="nav-login">Login</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Page Header Title -->
+  <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #ffffff; padding: 2rem 1.5rem; text-align: center; border-bottom: 1px solid #334155;">
+    <h1 style="font-size: 1.85rem; font-weight: 800; color: #ffffff; margin-bottom: 0.25rem;" id="cart-heading">Your Shopping Cart</h1>
+    <p style="color: #94a3b8; font-size: 0.925rem;">Review your selected items and proceed to checkout</p>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-cart-content">
+    
+    <div class="cart-layout" id="cart-layout-container">
+      <!-- Cart Items Container -->
+      <div class="cart-items-container" id="cart-items-list">
+        <!-- Rendered by cart.js -->
+      </div>
+
+      <!-- Cart Order Summary Container -->
+      <div class="cart-summary" id="cart-summary-card">
+        <!-- Rendered by cart.js -->
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="main-footer">
+    <div class="footer-content">
+      <div class="footer-col">
+        <a href="index.html" class="logo" style="font-size: 1.3rem; margin-bottom: 1rem; display: inline-block;">
+          🛍️ Shop<span>Ease</span>
+        </a>
+        <p>Your trusted online shopping store delivering quality products right to your doorstep.</p>
+        <div class="social-links">
+          <a href="#" id="social-facebook">🌐</a>
+          <a href="#" id="social-instagram">📸</a>
+          <a href="#" id="social-twitter">🐦</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Customer Service</h4>
+        <ul class="footer-links">
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Returns & Refunds</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul class="footer-links" style="font-size: 0.9rem;">
+          <li>📍 101 Commerce Hub, Tech Park, India</li>
+          <li>📧 support@shopease.com</li>
+          <li>📞 +91 1800-123-4567</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 ShopEase. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="cart.js"></script>
+  <script src="auth.js"></script>
+  <script src="common.js"></script>
+</body>
+</html>

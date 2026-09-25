@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopEase - Online Shopping Store</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header id="main-header">
+    <nav class="navbar">
+      <a href="index.html" class="logo" id="header-logo">
+        Shop<span>Ease</span>
+      </a>
+
+      <!-- Search Form -->
+      <form class="search-form" id="header-search-form">
+        <input type="text" id="header-search-input" placeholder="Search products..." />
+        <button type="submit" id="btn-header-search-submit" aria-label="Search">
+          🔍
+        </button>
+      </form>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+        ☰
+      </button>
+
+      <!-- Nav Links -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active" id="nav-home">Home</a></li>
+        <li><a href="products.html" id="nav-products">Products</a></li>
+        <li>
+          <a href="cart.html" id="nav-cart">
+            Cart 🛒 <span class="cart-badge" id="cart-count-badge">0</span>
+          </a>
+        </li>
+        <li id="user-nav-area">
+          <a href="login.html" class="btn btn-login-nav" id="nav-login">Login</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sub-Header Category Bar -->
+  <div class="category-ticker-bar" id="category-ticker-bar">
+    <a href="products.html" class="active">All Categories</a>
+    <a href="products.html?category=Electronics">Electronics</a>
+    <a href="products.html?category=Fashion">Fashion</a>
+    <a href="products.html?category=Footwear">Footwear</a>
+    <a href="products.html?category=Accessories">Accessories</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero-section">
+    <div class="hero-content">
+      <span class="hero-badge" id="hero-promo-badge">Limited Offer</span>
+      <h1 id="hero-heading">Upgrade Your Tech & Style<br>With ShopEase Deals</h1>
+      <p id="hero-subtext">Discover top-tier smartphones, laptops, clothing, footwear, and accessories at unbeatable prices.</p>
+      <div class="hero-btns">
+        <a href="products.html" class="btn btn-hero-white" id="btn-hero-shop-now">Shop Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Container -->
+  <main id="main-content">
+
+    <!-- Category Section -->
+    <section id="categories-section" style="margin-bottom: 2.5rem;">
+      <div class="section-title">
+        <div class="section-title-left">
+          <h2>Shop by Category</h2>
+        </div>
+        <p style="margin-top: 0.25rem;">Browse our curated product collections</p>
+      </div>
+
+      <div class="categories-grid">
+        <a href="products.html?category=Electronics" class="category-card" id="cat-card-electronics">
+          <div class="category-icon">📱</div>
+          <div>
+            <h3>Electronics</h3>
+            <p>Smartphones, Laptops & Earbuds</p>
+          </div>
+        </a>
+
+        <a href="products.html?category=Fashion" class="category-card" id="cat-card-fashion">
+          <div class="category-icon">👕</div>
+          <div>
+            <h3>Fashion</h3>
+            <p>T-Shirts, Jeans & Hoodies</p>
+          </div>
+        </a>
+
+        <a href="products.html?category=Footwear" class="category-card" id="cat-card-footwear">
+          <div class="category-icon">👟</div>
+          <div>
+            <h3>Footwear</h3>
+            <p>Sports Shoes & Sneakers</p>
+          </div>
+        </a>
+
+        <a href="products.html?category=Accessories" class="category-card" id="cat-card-accessories">
+          <div class="category-icon">⌚</div>
+          <div>
+            <h3>Accessories</h3>
+            <p>Watches & Tech Gear</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section id="featured-section" style="margin-bottom: 3rem;">
+      <div class="section-title">
+        <div class="section-title-left">
+          <h2>Featured Products</h2>
+        </div>
+        <a href="products.html" style="font-size: 0.85rem; font-weight: 700; color: var(--primary-color);">View All →</a>
+      </div>
+
+      <div class="products-grid" id="featured-products-grid">
+        <!-- Rendered via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Customer Benefits Section -->
+    <section class="benefits-section" id="benefits-section">
+      <div class="benefits-grid">
+        <div class="benefit-card" id="benefit-delivery">
+          <div class="benefit-icon" style="background-color: #ffedd5; color: #ea580c;">🚚</div>
+          <div>
+            <h4>FAST DELIVERY</h4>
+            <p>Free over ₹999</p>
+          </div>
+        </div>
+
+        <div class="benefit-card" id="benefit-payment">
+          <div class="benefit-icon" style="background-color: #dbeafe; color: #2563eb;">💳</div>
+          <div>
+            <h4>SECURE PAYMENT</h4>
+            <p>100% Protected</p>
+          </div>
+        </div>
+
+        <div class="benefit-card" id="benefit-returns">
+          <div class="benefit-icon" style="background-color: #f3e8ff; color: #9333ea;">🔄</div>
+          <div>
+            <h4>EASY RETURNS</h4>
+            <p>7-Day Policy</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Product Quick Details Modal -->
+  <div class="modal-overlay" id="product-modal">
+    <div class="modal-content">
+      <button class="modal-close" id="btn-modal-close" onclick="closeProductModal()">×</button>
+      <div id="product-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="main-footer">
+    <div class="footer-content">
+      <div class="footer-col" id="footer-about">
+        <a href="index.html" class="logo" style="font-size: 1.3rem; margin-bottom: 1rem; display: inline-block;">
+          🛍️ Shop<span>Ease</span>
+        </a>
+        <p>Your one-stop destination for quality electronics, stylish clothing, footwear and everyday lifestyle products.</p>
+        <div class="social-links">
+          <a href="#" id="social-facebook" aria-label="Facebook">🌐</a>
+          <a href="#" id="social-instagram" aria-label="Instagram">📸</a>
+          <a href="#" id="social-twitter" aria-label="Twitter">🐦</a>
+        </div>
+      </div>
+
+      <div class="footer-col" id="footer-quick-links">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col" id="footer-customer-service">
+        <h4>Customer Service</h4>
+        <ul class="footer-links">
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Returns & Refunds</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col" id="footer-contact">
+        <h4>Contact Us</h4>
+        <ul class="footer-links" style="font-size: 0.9rem;">
+          <li>📍 101 Commerce Hub, Tech Park, India</li>
+          <li>📧 support@shopease.com</li>
+          <li>📞 +91 1800-123-4567</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom" id="footer-copyright">
+      © 2026 ShopEase. All Rights Reserved. Built with HTML5, CSS3 & JavaScript.
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="cart.js"></script>
+  <script src="products.js"></script>
+  <script src="auth.js"></script>
+  <script src="common.js"></script>
+</body>
+</html>
